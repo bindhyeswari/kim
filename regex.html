@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var str = 'i will capitalize all the words in this sentence';
+        var re = /[0-9]\b/gm;
+        console.log(re.test(str));
+
+        console.log(str.match(re));
+        console.log(str.replace(/\b[a-z]/gm, function(x){
+            return x.toUpperCase();
+        }));
+
+        var username = 'asdfa456465 sdf';
+        var re_username = /^[a-z]{3,16}$/;
+        console.log(re_username.test(username));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -4,17 +4,62 @@
     <meta charset="UTF-8">
     <title></title>
     <script>
+
+        function Car(model){
+            this.model = model;
+        }
+        Car.prototype.toString = function (){
+            return this.model;
+        };
+
+        var civic = new Car('Civic');
+        console.log(String.fromCharCode(65,66,67));
+        console.log(civic);
+
+
         var obj = {
             val: 32,
             valueOf: function (){
                 return this.val;
+            },
+            toString: function (){
+                return 'The value of this object is ' + this.val;
             }
+
         };
 
+        // comparator:
+        // inputs: a, b --> Objects
+        // gets all property names of a
+        // gets all property names of b
+        // creates a union
+        // run through all names in the union
+        // if typeof a[prop] === 'object'
+        // compare a[prop] === b[prop]
+
+        // JSON.stringify()
+
+
+
         console.log(10 + obj);
+        console.log(obj.toString());
+
+        var x = 1 + 2 + 'asdf';
+
+
+        console.log("100" == true);
+
+        if("0"){
+            console.log('I am NOT falsy!');
+        }
+        Boolean("0");
+
+        console.log(obj.data === undefined);
+        console.log(typeof obj.data.asdf === "undefined");
+
     </script>
 </head>
 <body>
-
+&#516;
 </body>
 </html>

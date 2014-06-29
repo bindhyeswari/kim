@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div.display {
+            display: inline-block;
+            border: 1px solid #888 ;
+            padding: 1em;
+            margin: 0.5em;
+        }
+    </style>
+    <script>
+
+        function getClass(obj){
+            return Object.prototype.toString.call(obj);
+        }
+
+        function execute(fn){
+            alert(fn);
+            fn.apply({}, ['Hello World!']);
+
+            var inputs = Array.prototype.slice.call(arguments, 1);
+
+            console.log(getClass(arguments));
+
+            setTimeout(function (){
+                fn.apply(this, inputs);
+            }, 1000);
+        }
+
+        document.addEventListener('DOMContentLoaded', function (){
+            // create a new div every 1s
+            /*var intervalID = setInterval(function (){
+                var div = document.createElement('div');
+                div.className = 'display';
+                document.body.appendChild(div);
+                div.onclick = function (){
+                    clearInterval(intervalID);
+                };
+            }, 1000);*/
+
+            str = 'Hello from Kim!';
+
+            execute(function (inp_string){
+                console.log(inp_string);
+            }, str);
+
+
+        });
+
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>

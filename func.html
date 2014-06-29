@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            cursor: crosshair;
+        }
+        nav.menu {
+            position: fixed;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function (){
+            var path = document.getElementById('path');
+            var str = '';
+            document.getElementById('svgElement').addEventListener('click', function (event){
+
+                if (str) {
+                    str += 'L' + event.clientX + ' ' + event.clientY + ' ';
+                } else {
+                    str =  'M ' + event.clientX + ' ' + event.clientY + ' ';
+                }
+
+                path.setAttribute('d', str);
+
+                console.log(str);
+
+                // M150 0 L75 200 L225 200 Z
+            });
+        });
+    </script>
+</head>
+<body>
+<svg id="svgElement" height="600" width="600" style="background-color: #eee;">
+    <path d="" id="path" fill="#eee" stroke="green"/>
+</svg>
+</body>
+</html>

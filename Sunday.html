@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var obj = {
+            val: 100,
+            toJSON: function (){
+                return [this.val];
+            }
+        };
+
+        console.log(JSON.stringify(obj));
+        console.log(obj.toString());
+
+        var arr = new Date();
+
+        console.log(Object.prototype.toString.call(arr));
+        console.log(arr.toString());
+
+
+        // arr --> Array.prototype (toString --> array elements) --> Object.prototype (toString [object classname])
+        var val = 32; // equivalent to writing window.val = 32; window is the global object
+
+        function x (caption, caption2){
+            console.log(caption + this.val + caption2);
+        }
+
+        x('The value of this.val is ', '. Press enter to exit.');
+
+        x.call(obj, 'The value of this.val is ', '. Press enter to exit.');
+
+        x.apply(obj, ['The value of this.val is ', '. Press enter to exit.']);
+
+        // bind method on functions
+        var g = x.bind(obj);
+        g('The value of this.val is ', '. Press enter to exit.');
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

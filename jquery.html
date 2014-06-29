@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            font: 300 1em 'Helvetica Neue';
+        }
+    </style>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script>
+
+        function getClass(obj){
+            return Object.prototype.toString.call(obj);
+        }
+
+        // function as an input - it runs it after the page is loaded
+        // consider it as if it registers an event handler
+        $(function (){
+            console.log('page load 1');
+
+
+            // provide a css selector as an input
+            var arr = [1,2,3,1];
+            var jqueryData = $('div');
+            console.log(jqueryData);
+
+            jqueryData.html('Helo from Kim!');
+            jqueryData.css({
+                backgroundColor: 'red',
+                fontSize: '2em'
+            });
+            jqueryData.addClass('someClass');
+
+            console.log(getClass(jqueryData[0]));
+
+            // provide an HTML tag
+            $('<span>').html('I am a span').css({
+                display: 'inline-block',
+                margin: '2em',
+                backgroundColor: '#eee'
+            }).appendTo(document.body);
+
+            $(document.body).css('background-color', 'green');
+
+
+
+        });
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    <div id="asdf">
+        <div>ff</div>
+        <div>fasdfsadfasdfsadf</div>
+    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

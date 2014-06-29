@@ -13,6 +13,7 @@
             width: 40%;
             border: 1px solid #eee;
             padding: 1em;
+            margin-top: 1em;
         }
         div.name {
             font-size: 2em;
@@ -47,38 +48,62 @@
     </style>
     <script src="bower_components/jquery/dist/jquery.js"> </script>
     <script>
-        /*$(function (){
+        $(function (){
             $.getJSON('http://restcountries.eu/rest/v1/region/africa', function(data){
                 //console.log(data);
+
+                data[0].borders.splice(1,1, 'LBY');
+
                 var alpha3CodeMap = {};
                 data.forEach(function(country){
                     alpha3CodeMap[country.alpha3Code] = country.name;
                 });
                 console.log(alpha3CodeMap);
 
+                alpha3CodeMap['ISR'] = 'Israel';
+
+                var body = document.body;
+                // run a loop for all the countries
+
+                try {
+                    data.forEach(function(country){
+                        var $country = $('<div>').addClass('country').attr('id', country.alpha3Code);
+                        $('<div>').addClass('name').html(country.name).appendTo($country);
+                        $('<div>').addClass('population').html(country.population).appendTo($country);
+                        $('<div>').addClass('capital').html(country.capital).appendTo($country);
+                        $('<div>').addClass('latlong').html(country.latlng.join(', ')).appendTo($country);
+                        var $neighbors = $('<div>').addClass('neighbors');
+                        $neighbors.appendTo($country);
+
+                        // to create a set of links to neighboring countries
+                        country.borders.forEach(function(code){
+
+                            if (code in alpha3CodeMap) {
+                                $('<a>').attr('href', '#' + code).html(alpha3CodeMap[code]).appendTo($neighbors);
+                            } else {
+                                throw new Error('Could not find code ' + code + ' for bordering country of ' + country.name);
+                            }
+
+
+                        });
+
+                        $country.appendTo(body);
+                    });
+                } catch (e) {
+                    $('#countries').html('Data integrity issue: ' + e.message);
+                }
+
+
                 // creating the divs for each country and populate it with data
             });
-        });*/
+        });
     </script>
 </head>
 <body>
     <div id="countries">
 
-        <div class="country">
-            <div class="name">Algeria</div>
-            <div class="population">259000000</div>
-            <div class="capital">Algiers</div>
-            <div class="latlong">25.3, 21.8</div>
-            <div class="neighbors">
-                <a href="#TUN">Tunisia</a>
-                <a href="#LBA">Libya</a>
-            </div>
-        </div>
+
+
     </div>
-
-
-
-
-
 </body>
 </html>

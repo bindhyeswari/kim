@@ -3,16 +3,80 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        body {
+            font: 300 1em 'Helvetica Neue';
+            color: #888;
+        }
+        div.country {
+            margin: 0.25em auto;
+            width: 40%;
+            border: 1px solid #eee;
+            padding: 1em;
+        }
+        div.name {
+            font-size: 2em;
+            color: #222;
+        }
+        div.capital {
+            font-size: 1.3em;
+            color: #333;
+        }
+        div.population, div.latlong {
+            float: right;
+        }
+        div.neighbors {
+            margin-top: 0.5em;
+            width: 60%;
+        }
+        div.neighbors > a {
+            display: inline-block;
+            background-color: #efefef;
+            color: #666;
+            text-shadow: 1px 1px 1px white;
+            padding: 0.3em 0.5em;
+            text-decoration: none;
+            border-radius: 0.15em;
+            margin: 0.10em;
+        }
+        div.neighbors > a:hover {
+            background-color: #444;
+            color: #eee;
+            text-shadow: 1px 1px 1px black;
+        }
+    </style>
     <script src="bower_components/jquery/dist/jquery.js"> </script>
     <script>
-        $(function (){
+        /*$(function (){
             $.getJSON('http://restcountries.eu/rest/v1/region/africa', function(data){
-                console.log(data);
+                //console.log(data);
+                var alpha3CodeMap = {};
+                data.forEach(function(country){
+                    alpha3CodeMap[country.alpha3Code] = country.name;
+                });
+                console.log(alpha3CodeMap);
+
+                // creating the divs for each country and populate it with data
             });
-        });
+        });*/
     </script>
 </head>
 <body>
+    <div id="countries">
+
+        <div class="country">
+            <div class="name">Algeria</div>
+            <div class="population">259000000</div>
+            <div class="capital">Algiers</div>
+            <div class="latlong">25.3, 21.8</div>
+            <div class="neighbors">
+                <a href="#TUN">Tunisia</a>
+                <a href="#LBA">Libya</a>
+            </div>
+        </div>
+    </div>
+
+
 
 
 

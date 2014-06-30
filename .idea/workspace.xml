@@ -43,15 +43,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="svgHandling.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="svgHandling.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/svgHandling.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.55163044" vertical-offset="517" max-vertical-offset="885">
+            <state vertical-scroll-proportion="-8.458333" vertical-offset="517" max-vertical-offset="885">
               <caret line="48" column="30" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
               <folding>
                 <element signature="n#style#0;n#line#0;n#svg#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#line#1;n#svg#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="color.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/color.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5298913" vertical-offset="0" max-vertical-offset="525">
+              <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -77,6 +87,7 @@
         <option value="$PROJECT_DIR$/jquery.html" />
         <option value="$PROJECT_DIR$/jqueryajax.html" />
         <option value="$PROJECT_DIR$/svgHandling.html" />
+        <option value="$PROJECT_DIR$/color.html" />
       </list>
     </option>
   </component>
@@ -382,12 +393,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/svgHandling.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55163044" vertical-offset="517" max-vertical-offset="885">
+        <state vertical-scroll-proportion="-8.458333" vertical-offset="517" max-vertical-offset="885">
           <caret line="48" column="30" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
           <folding>
             <element signature="n#style#0;n#line#0;n#svg#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#line#1;n#svg#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/color.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5298913" vertical-offset="0" max-vertical-offset="525">
+          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
